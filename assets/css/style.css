@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-  color: #3291e6;
+  color: #b0c9df;
   text-decoration: none;
 }
 
@@ -1638,7 +1638,7 @@ button,
 
 button:hover,
 .button:hover {
-  background: #1c84e3;
+  background: #328fe6;
 }
 
 @-webkit-keyframes animate-loading {
