@@ -1,0 +1,9 @@
+<section class="page-banner">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> / {{ include.title }}</nav>
+    <h1>{{ include.heading | default: include.title }}</h1>
+    {%- if include.lead %}
+    <p class="lead">{{ include.lead }}</p>
+    {%- endif %}
+  </div>
+</section>

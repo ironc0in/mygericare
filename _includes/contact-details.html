@@ -1,0 +1,16 @@
+<div class="contact-item">
+  <span class="icon-tile">{% include icon.html name="pin" size=22 %}</span>
+  <div><h3>Location</h3><p>{{ site.address }}</p></div>
+</div>
+<div class="contact-item">
+  <span class="icon-tile">{% include icon.html name="mail" size=22 %}</span>
+  <div><h3>Email</h3><p>{% include email.html %}</p></div>
+</div>
+<div class="contact-item">
+  <span class="icon-tile">{% include icon.html name="phone" size=22 %}</span>
+  <div><h3>Call</h3><p><a href="tel:{{ site.phone_link }}">{{ site.phone }}</a></p></div>
+</div>
+<div class="contact-item">
+  <span class="icon-tile">{% include icon.html name="fax" size=22 %}</span>
+  <div><h3>Fax</h3><p>{{ site.fax }}</p></div>
+</div>

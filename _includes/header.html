@@ -1,0 +1,40 @@
+{%- assign current = page.url | default: "/" -%}
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-contact">
+      <span class="topbar-item topbar-address">{% include icon.html name="pin" size=16 %}{{ site.address }}</span>
+      <a class="topbar-item topbar-phone" href="tel:{{ site.phone_link }}">{% include icon.html name="phone" size=16 %}<span class="topbar-phone-label">Call </span>{{ site.phone }}</a>
+      <span class="topbar-item topbar-fax">{% include icon.html name="fax" size=16 %}Fax {{ site.fax }}</span>
+    </div>
+    <span class="topbar-note">Affiliated with Advocate Aurora Healthcare</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <svg class="brand-mark" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#1B6BB0"/><path d="M18 11h8v7h7v8h-7v7h-8v-7h-7v-8h7z" fill="#fff"/></svg>
+      <span class="brand-text">
+        <span class="brand-name">{{ site.title }}</span>
+        <span class="brand-sub">Internal &amp; Geriatric Medicine</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+      <span class="nav-toggle-open">{% include icon.html name="menu" size=22 stroke=2 %}</span>
+      <span class="nav-toggle-close">{% include icon.html name="close" size=22 stroke=2 %}</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}" {% if current == "/" or current == "/index.html" %}aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/providers' | relative_url }}" {% if current contains "/providers" %}aria-current="page"{% endif %}>Providers</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" {% if current contains "/about" %}aria-current="page"{% endif %}>About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" {% if current contains "/contact" %}aria-current="page"{% endif %}>Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-portal" href="{{ site.portal_url }}" target="_blank" rel="noopener">{% include icon.html name="lock" size=18 stroke=2 %}Patient Portal</a>
+    </nav>
+  </div>
+</header>

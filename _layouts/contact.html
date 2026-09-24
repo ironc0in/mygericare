@@ -1,68 +1,13 @@
-{% include head.html %}
+---
+layout: default
+---
+{% include page-banner.html title="Contact" %}
 
-<body>
-
-  {% include nav.html %}
-
-  <main id="main">
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact contact-page-content-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-      </div>
-      <div>
-        <iframe style="border:0; width: 100%; height: 350px;"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47410.17691104995!2d-87.88178663202719!3d42.04026272271535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc8184fdcd539%3A0xd4ea7f2d1c5c3d03!2s1600%20Dempster%20St%2C%20Park%20Ridge%2C%20IL%2060068%2C%20USA!5e0!3m2!1sen!2s!4v1671049150040!5m2!1sen!2s"
-          frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="container">
-        <div class="row mt-5">
-
-          <div class="col-lg-12">
-            <div class="info row">
-              <div class="address col-lg-3">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>1600 West Dempster, Suite #120, Park Ridge, IL 60068</p>
-              </div>
-
-              <div class="email col-lg-3">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#105;&#x6e;&#102;&#111;&#64;&#x6d;&#x79;&#000103;&#000101;&#x72;&#000105;&#x63;&#x61;&#x72;&#101;&#x2e;&#x63;&#x6f;&#x6d;" >
-                  &#x69;&#110;&#x66;&#x6f;<!-- spam@dr.com -->&#x40;&#000109;&#000121;&#x67;&#x65;&#000114;&#000105;&#99;<!-- spam@doctor.com -->&#x61;&#x72;&#000101;&#x2e;&#x63;&#000111;&#109;
-                </a>
-              </div>
-
-              <div class="phone col-lg-3">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p><a href="tel:+18472997888">847-299-7888</a></p>
-              </div>
-
-              <div class="phone col-lg-3">
-                <i class="fa fa-fax"></i>
-                <h4>Fax:</h4>
-                <p>847-299-7844</p>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  {% include footer.html %}
-  {% include scripts.html %}
-
-</body>
-
-</html>
+<section class="section section-tight">
+  <div class="container">
+    <div class="contact-cards">
+      {% include contact-details.html %}
+    </div>
+    {% include map.html %}
+  </div>
+</section>

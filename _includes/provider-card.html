@@ -1,0 +1,45 @@
+{%- comment -%}
+  Provider card. Usage: {% include provider-card.html provider=p %}
+  Pass compact=true for the Home page teaser (no bio or button).
+{%- endcomment -%}
+{%- assign p = include.provider -%}
+<article class="provider-card{% if include.compact %} provider-card-compact{% endif %}">
+  <img class="provider-photo" src="{{ '/assets/img/providers/' | append: p.photo | relative_url }}" alt="{{ p.name }}, {{ p.cred }}" width="128" height="128" loading="lazy">
+  <div class="provider-body">
+    <div class="provider-heading">
+      <span class="eyebrow">{{ p.role }}</span>
+      <h3 class="provider-name">{{ p.name }}</h3>
+      <span class="provider-cred">{{ p.cred }}</span>
+    </div>
+    {%- if p.languages and include.compact != true %}
+    <span class="chip">{% include icon.html name="globe" size=14 stroke=2 %}Speaks {{ p.languages }}</span>
+    {%- endif %}
+    {%- unless include.compact %}
+    <p class="provider-excerpt">{{ p.bio | first }}</p>
+    <button class="link-button provider-more" type="button" data-dialog="bio-{{ p.id }}">Read full bio {% include icon.html name="arrow-right" size=16 stroke=2 %}</button>
+    {%- endunless %}
+  </div>
+</article>
+{%- unless include.compact %}
+<dialog class="bio-dialog" id="bio-{{ p.id }}" aria-labelledby="bio-{{ p.id }}-name">
+  <div class="bio-dialog-inner">
+    <img class="provider-photo provider-photo-lg" src="{{ '/assets/img/providers/' | append: p.photo | relative_url }}" alt="{{ p.name }}" width="160" height="160" loading="lazy">
+    <div class="bio-dialog-content">
+      <div class="bio-dialog-head">
+        <div>
+          <span class="eyebrow">{{ p.role }}</span>
+          <h2 class="bio-dialog-name" id="bio-{{ p.id }}-name">{{ p.name }}</h2>
+          <span class="provider-cred">{{ p.cred }}</span>
+        </div>
+        <form method="dialog"><button class="icon-button" aria-label="Close">{% include icon.html name="close" size=18 stroke=2 %}</button></form>
+      </div>
+      {%- if p.languages %}
+      <span class="chip">{% include icon.html name="globe" size=14 stroke=2 %}Speaks {{ p.languages }}</span>
+      {%- endif %}
+      {%- for para in p.bio %}
+      <p>{{ para }}</p>
+      {%- endfor %}
+    </div>
+  </div>
+</dialog>
+{%- endunless %}

@@ -22,14 +22,21 @@ title: Gericare Ltd.
 tagline: Where Patients Come First.
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Geriatric specialists
+  Gericare Ltd. is a medical practice in Park Ridge, IL specializing in Internal Medicine, Geriatric Medicine and Wound Care.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.myGericare.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-copyright: "Gericate Ltd."
+copyright: "Gericare Ltd."
+
+# Practice details used across the site
+address: "1600 West Dempster, Suite #120, Park Ridge, IL 60068"
+phone: "847-299-7888"
+phone_link: "+18472997888"
+fax: "847-299-7844"
+portal_url: "https://livewell.aah.org/chart/Authentication/Login"
 
 # Build settings
-theme: minima
+# theme: minima  (not used; layouts are self-contained)
 plugins:
   - jekyll-feed
 
@@ -41,6 +48,9 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+exclude:
+  - .dccache
+  - README.md
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
